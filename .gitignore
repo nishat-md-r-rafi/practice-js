@@ -1,4 +1,10 @@
 /API/node_modules
 /API/yarn.lock
 /API/.vscode
+/node_modules
+/yarn.lock
+/.vscode
+
+/package-lock.json
+
 
