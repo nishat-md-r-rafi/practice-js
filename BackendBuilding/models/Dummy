@@ -1,9 +1,18 @@
 const mongoose = require('mongoose');
 const DummySchema =  new mongoose.Schema({
     name: String,
-    number: Number,
+    phone: Number,
     isMarried: {type:Boolean, required: true},
-    brideName: {type:Boolean, required: function (){ return isMarried; }},
+    brideName: {type:String, required: function (){ return isMarried; }},
+    skills: {
+        type: Array,
+        validate: {
+            validator: function(v){
+                return v.length > 0;
+            },
+            message: "You should at least one skills",            
+        }
+    }
 })
 
 module.exports = mongoose.model('Dummy', DummySchema)

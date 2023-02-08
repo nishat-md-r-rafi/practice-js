@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
     res.send("hello backend")
 })
 
-app.use('dummy/route', dummy)
+app.use('/api/dummy', dummy)
 
 
 app.listen(PORT, ()=>{
