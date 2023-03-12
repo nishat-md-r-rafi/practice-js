@@ -8,10 +8,10 @@ route.get('/', async (req, res) => {
 
 route.post('/post', async (req, res) => {
     try{
-        console.log(req.body)
-        // const newDummy = new Dummy()
-        // const result = await newDummy.save();
-        // res.status(200).send(result);
+        const newDummy = new Dummy(req.body)
+        // console.log(newDummy)
+        const result = await newDummy.save();
+        res.status(200).send(result);
     }catch(err){
         console.log(err.message)
     }

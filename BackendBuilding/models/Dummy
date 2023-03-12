@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const DummySchema =  new mongoose.Schema({
     name: String,
     phone: Number,
-    isMarried: {type:Boolean, required: true},
-    brideName: {type:String, required: function (){ return isMarried; }},
+    isMarried: {type: Boolean, required: true},
+    brideName: {type:String, required: function(){
+        return this.isMarried;
+    }},
     skills: {
         type: Array,
         validate: {

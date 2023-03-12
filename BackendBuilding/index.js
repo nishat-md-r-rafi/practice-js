@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const posts = require('./routes/posts');
 
+console.log(sum(1,3))
+
 
 const app = express();
 const dummy = require('./routes/dummy');
